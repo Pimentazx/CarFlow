@@ -2,111 +2,135 @@
 <html lang="pt">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CarFlow</title>
+  <meta name="description" content="Aluguel de carros para agência de aluguéis.">
   <link href="estilo.css" rel="stylesheet">
-  <title>GNP FIT</title>
+  <link href="assets/carflowicon.svg" rel="shortcut icon">
 </head>
 
 <body>
   <header>
     <div class="logo_caixa">
-      <img src="assets/kisspng-sports-car-logo-auto-racing-vector-sports-car-car-wire-frame-png-picture-5a90fc321336a5.2878361915194511860787-removebg-preview.png" class="logo" />
+      <img src="assets/CarFlow.svg"/>
     </div>
   </header>
-  <div class="cor_fundo">
-    <!--Sobre a empresa-->
-    <section class="area_site">
-      <h1 class="titulo_site"> Lista de Encomendas</h1>
-      <hr />
-      <label for="filtrarabela">Filtrar</label>
-      <input type="text" id="filtrar-tabela" placeholder="Digite o nome da tabela">
-    </section>
-    <table id="tabela-encomendas">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Produto</th>
-          <th>Quantidade</th>
-          <th>Valor Unitario</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="clientes">
-          <td class="nome">Chevrolet</td>
-          <td>Chevrolet Onix</td>
-          <td class="qtde">3</td>
-          <td class="unitario">500</td>
-          <td class="total">-</td>
-        </tr>
-        <tr class="clientes">
-          <td class="nome">Ford </td>
-          <td>Ford Ranger</td>
-          <td class="qtde">2</td>
-          <td class="unitario">800</td>
-          <td class="total">-</td>
-        </tr>
-        <tr class="clientes">
-          <td class="nome">Hyundai</td>
-          <td>Hyundai HB20</td>
-          <td class="qtde">3</td>
-          <td class="unitario">400</td>
-          <td class="total">-</td>
-        </tr>
-        <tr class="clientes">
-          <td class="nome">Fiat</td>
-          <td>Fiat Toro</td>
-          <td class="qtde"> 2</td>
-          <td class="unitario">300</td>
-          <td class="total">-</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="botoes">
-    <button id="buscar-encomendas" class="adicionar"> Buscar Encomendas</button>
-  </div>
-    <!--Área de inserção de formulário-->
-    <section class="area_site">
-      <h1 class="titulo_site"> Adicionar nova encomenda</h1>
-      <hr />
-      <section>
-        <div class="erro" id="erro-nome"></div>
-        <div class="erro" id="erro-qtde"></div>
-        <div class="erro" id="erro-produto"></div>
-        <div class="erro" id="erro-unit"></div>
-        <div class="erro" id="mensagem-erro"></div>
-      </section>
-    </section>
-    <section class="dadosEncomenda">
-      <div class="design">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="" class="input-padrao" required placeholder="Digite o nome do(a) cliente">
+  <main>
+    <article class="lista_encomenda">
+      <div class="titulo_lista">
+        <h1 class="titulo_site"> Lista de encomendas</h1>
+        <hr />
       </div>
-      <div class="design">
-        <label for="qtde">Qtde:</label>
-        <input type="number" id="qtde" name="" class="input-padrao" required placeholder="Digite a quantidade encomendada">
+      <div class="filtrar_tabela">
+        <label for="filtrarabela">Filtrar:</label>
+        <input type="text" id="filtrar-tabela" placeholder="Digite o nome da tabela">
       </div>
-      <div class="design">
-        <label for="prod">Produto:
-          <select class="input-padrao" id="produto" required>
-            <option>Selecione</option>
-            <option>Volksvagem Voyage 2014</option>
-            <option>Pegueot 208 2018</option>
-            <option>Toyota Corolla 2020</option>
-            <option>Renault Clio 2015</option>
-          </select>
-        </label>
+      <div class="tabela">
+
+        <table id="tabela-encomendas">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Valor Unitario</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="clientes">
+              <td class="nome">Ricardo</td>
+              <td>Chevrolet Onix</td>
+              <td class="qtde">3</td>
+              <td class="unitario">500</td>
+              <td class="total">-</td>
+            </tr>
+            <tr class="clientes">
+              <td class="nome">Marcelo</td>
+              <td>Ford Ranger</td>
+              <td class="qtde">2</td>
+              <td class="unitario">800</td>
+              <td class="total">-</td>
+            </tr>
+            <tr class="clientes">
+              <td class="nome">Pedro</td>
+              <td>Hyundai HB20</td>
+              <td class="qtde">3</td>
+              <td class="unitario">400</td>
+              <td class="total">-</td>
+            </tr>
+            <tr class="clientes">
+              <td class="nome">João</td>
+              <td>Fiat Toro</td>
+              <td class="qtde"> 2</td>
+              <td class="unitario">300</td>
+              <td class="total">-</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="design">
-        <label for="unit">R$ Unitario:</label>
-        <input type="number" id="unit" name="" class="input-padrao" required placeholder="Digite o valor unitario do produto">
+      <div class="botao_tabela">
+        <button id="buscar-encomendas" class="adicionar"> Buscar Encomendas</button>
       </div>
-      <div class="botoes">
-      <input type="button" id="adicionar-encomenda" value="Adicionar" class="adicionar" onclick="adicionarEncomenda()">
-    </div>
-    </section>
-    <script src="javascript.js"></script>
-    <script src="buscarencomenda.js"></script>
-  </div>
+        
+
+    </article>
+    <article class="adicionar_encomenda">
+      <div class="titulo_adicionar">
+        <h1 class="titulo_site"> Adicionar nova encomenda</h1>
+        <hr />
+      </div>
+      <div class="erro_adicionar">
+          <div class="erro" id="erro-nome"></div>
+          <div class="erro" id="erro-qtde"></div>
+          <div class="erro" id="erro-produto"></div>
+          <div class="erro" id="erro-unit"></div>
+          <div class="erro" id="mensagem-erro"></div>
+      </div>
+      <div class="formulario_adicionar">
+        <div class="design">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="" class="input-padrao" required placeholder="Digite o nome do(a) cliente">
+        </div>
+        <div class="design">
+          <label for="qtde">Quantidade:</label>
+          <input type="number" id="qtde" name="" class="input-padrao" required
+            placeholder="Digite a quantidade encomendada">
+        </div>
+        <div class="design">
+          <label for="prod">Produto:</label>
+            <select class="input-padrao" id="produto" required>
+              <option> </option>
+              <option>Volksvagem Voyage </option>
+              <option>Pegueot 208 </option>
+              <option>Toyota Corolla </option>
+              <option>Renault Clio </option>
+            </select>
+          
+        </div>
+        <div class="design">
+          <label for="unit">R$ Unitario:</label>
+          <input type="number" id="unit" name="" class="input-padrao" required
+            placeholder="Digite o valor unitario do produto">
+        </div>
+      </div>
+      <div class="botao_adiconar">
+        <input type="button" id="adicionar-encomenda" value="Adicionar" class="adicionar"
+          onclick="adicionarEncomenda()">
+      </div>
+
+    </article>
+  </main>
+  <script src="javascript.js"></script>
+  <script src="buscarencomenda.js"></script>
+</div>
+<footer class="rodape">
+  <p class="texto-footer">Alguns direitos reservados a CarFlow.</p>
+</footer>
 </body>
 
 </html>
+
+ 

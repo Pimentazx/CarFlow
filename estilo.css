@@ -1,46 +1,23 @@
 /*Estilização geral do site*/
 body {
-  font-family: "Arial";
+  font-family: Arial, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  border: 0;
-
-}
-
-/*Estilização do header da pagina*/
-header {
-  background-color: #702632;
-}
-
-/*Estilização do LOGOTIPO*/
-.logo {
-  width: 25%;
-}
-
-/*Estilização do MENU*/
-
-.logo_caixa {
-  width: 40%;
-}
-
-
-/*Titulos padrão*/
-.titulos_padrao {
-  text-align: center;
+  background-color: #FFFFFA;
+  gap: 60px;
+  justify-items: center;
+  margin-top: 60px;
 }
 
 .titulo_site {
   color: black;
   border-bottom: 1px, solid 080705;
+  padding-left: 20px;
 }
 
-.area_site {
-  background-color: #FFFFFA;
-  padding: 40px;
+hr {
+  width: 97%;
 }
-
-
-
 table {
   border-collapse: collapse;
   border: 2px solid rgb(200, 200, 200);
@@ -64,16 +41,6 @@ td {
   text-align: center;
 }
 
-
-
-caption {
-  padding: 10px;
-}
-
-.info-qtde {
-  background-color: #912f40;
-}
-
 .info-qtde {
   background-color: #912f40;
 }
@@ -90,20 +57,25 @@ caption {
   border: none;
   cursor: pointer;
   font-size: 16px;
-  
+}
+
+.erro_adicionar {
+  padding-left: 20px; 
 }
 
 .erro {
   color: #702632;
   margin-top: 5px;
   font-size: 14px;
+  padding: 2px;
 }
 
 .design {
- display: inline-block; 
- width: 40%;
- padding-left: 7%;
- padding-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%; /* Mantém dois elementos por linha */
+  padding: 5px;
 }
 
 #filtrar-tabela{
@@ -116,12 +88,115 @@ caption {
   display:none;
 }
 
-.cor_fundo {
-  background-color: #FFFFFA;
+.botao_tabela {
+  text-align: center;
+  padding: 40px;
 }
 
-.botoes {
-  width: 20%;
-  padding-left: 4%;
-  padding-bottom: 1%;
+.botao_adiconar {
+  text-align: center;
+  padding: 40px;
+}
+
+
+.rodape {
+  background: #000000;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.texto-footer {
+  color: #ffffff;
+  
+}
+
+.filtrar_tabela {
+  padding: 20px;
+}
+
+
+.formulario_adicionar {
+  padding: 20px;
+  padding-left: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 81%;
+  
+}
+
+select.input-padrao {
+  width: 53%;
+  
+  
+  padding-right: 10px; /* Garante espaço para a seta */
+}
+
+.design label {
+  white-space: nowrap; /* Evita quebra de linha no label */
+}
+
+
+@media (max-width: 600px) {
+  /* Centraliza os títulos */
+  .titulo_site {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  /* Centraliza o bloco de filtragem */
+  .filtrar_tabela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #filtrar-tabela {
+    width: 300px; /* Mantém um tamanho uniforme */
+    max-width: 90%;
+    text-align: center;
+  }
+
+  /* Ajusta os campos do formulário */
+  .formulario_adicionar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto; /* Mantém um tamanho natural */
+    text-align: center;
+  }
+
+  .design label {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .input-padrao {
+    width: 300px; /* Mantém todas as caixas com o mesmo tamanho */
+    max-width: 90%;
+  }
+
+  select.input-padrao {
+    width: 300px; /* Alinha com os inputs */
+    max-width: 90%;
+  }
+  .erro {
+    align-items: center;
+    text-align: center;
+  }
+  select.input-padrao {
+    text-align: center;
+  }
 }

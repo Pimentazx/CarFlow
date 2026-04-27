@@ -1,30 +1,19 @@
 var botaoBuscar = document.querySelector('#buscar-encomendas');
 
 botaoBuscar.addEventListener("click", function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:3000/encomendas");
-
-    xhr.addEventListener("load", function () {
-        try {
-            // Parseando a resposta JSON
-            var resposta = JSON.parse(xhr.responseText);
-            console.log("Resposta da API:", resposta); // Adicionando log para verificar a estrutura da resposta
-
-            // Verificando se a resposta é um array
-            if (Array.isArray(resposta)) {
-                resposta.forEach(function (cada_encomenda) {
-                    adicionarEncomendaNaTabela(cada_encomenda);
-                });
+    fetch("https://pimentazx.github.io/buscarencomendas/encomendas.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log("Resposta da API:", data);
+            if (data.encomendas && Array.isArray(data.encomendas)) {
+                data.encomendas.forEach(adicionarEncomendaNaTabela);
             } else {
-                console.error("A resposta da API não contém o array de encomendas esperado.");
+                console.error("O JSON não contém o array de encomendas esperado.");
             }
-        } catch (e) {
-            console.error("Erro ao processar a resposta da API:", e);
-        }
-    });
-
-    xhr.send();
+        })
+        .catch(error => console.error("Erro ao carregar JSON:", error));
 });
+
 
 // Função para adicionar uma encomenda na tabela
 function adicionarEncomendaNaTabela(encomenda) {
@@ -84,7 +73,7 @@ function adicionarEncomenda() {
         document.getElementById("erro-qtde").innerText = "";
     }
 
-    if (produto === "Selecione") {
+    if (produto === "") {
         mensagemErro += "Por favor, selecione um Produto.\n";
         document.getElementById("erro-produto").innerText = "Por favor, selecione um Produto.";
     } else {
